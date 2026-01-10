@@ -87,8 +87,8 @@ const HeroSection = ({ onBookClick }) => {
             {quickLinks.map((link, index) => (
               <button
                 key={index}
-                onClick={link.title === 'Home Collection' ? onBookClick : undefined}
-                className={`${link.color} p-6 rounded-2xl border-2 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 text-left group`}
+                onClick={() => handleCardClick(link)}
+                className={`${link.color} p-6 rounded-2xl border-2 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 text-left group cursor-pointer`}
               >
                 <link.icon className="w-10 h-10 text-gray-700 mb-4" />
                 <h3 className="font-semibold text-gray-800 text-lg">{link.title}</h3>
