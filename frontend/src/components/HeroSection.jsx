@@ -1,0 +1,105 @@
+import React from 'react';
+import { Search, Home, MapPin, Package, ArrowRight, Phone, Clock } from 'lucide-react';
+import { Button } from './ui/button';
+import { Input } from './ui/input';
+import { clinicInfo } from '../data/mock';
+
+const HeroSection = ({ onBookClick }) => {
+  const quickLinks = [
+    { icon: Search, title: 'Find a Test', subtitle: 'View Tests & Prices', color: 'bg-teal-50 hover:bg-teal-100 border-teal-200' },
+    { icon: Home, title: 'Home Collection', subtitle: 'Book at Doorstep', color: 'bg-orange-50 hover:bg-orange-100 border-orange-200' },
+    { icon: MapPin, title: 'Visit Clinic', subtitle: 'Safdarjung Enclave', color: 'bg-blue-50 hover:bg-blue-100 border-blue-200' },
+    { icon: Package, title: 'Health Packages', subtitle: 'Full Body Checkups', color: 'bg-emerald-50 hover:bg-emerald-100 border-emerald-200' }
+  ];
+
+  return (
+    <section id="home" className="relative bg-gradient-to-br from-slate-50 via-teal-50/30 to-white min-h-[85vh] flex items-center">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-20 right-10 w-72 h-72 bg-teal-200/20 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 left-10 w-96 h-96 bg-orange-200/20 rounded-full blur-3xl" />
+      </div>
+
+      <div className="relative max-w-7xl mx-auto px-4 py-16 w-full">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left Content */}
+          <div className="space-y-8">
+            <div className="space-y-4">
+              <div className="inline-flex items-center gap-2 bg-teal-100 text-teal-700 px-4 py-2 rounded-full text-sm font-medium">
+                <Clock className="w-4 h-4" />
+                45+ Years of Trusted Healthcare
+              </div>
+              
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                Your Family's
+                <span className="text-teal-600 block">Health Partner</span>
+              </h1>
+              
+              <p className="text-lg text-gray-600 max-w-xl">
+                {clinicInfo.tagline}. Comprehensive lab tests, expert consultations, dental care & more - all under one roof.
+              </p>
+            </div>
+
+            {/* Search Bar */}
+            <div className="bg-white rounded-2xl shadow-xl p-2 flex items-center gap-2 max-w-xl border border-gray-100">
+              <div className="flex-1 flex items-center gap-3 px-4">
+                <Search className="w-5 h-5 text-gray-400" />
+                <Input 
+                  placeholder="Search for tests, packages..." 
+                  className="border-0 focus-visible:ring-0 text-gray-700 placeholder:text-gray-400"
+                />
+              </div>
+              <Button className="bg-teal-600 hover:bg-teal-700 text-white px-6 py-6 rounded-xl">
+                Search
+              </Button>
+            </div>
+
+            {/* Stats */}
+            <div className="flex flex-wrap gap-8 pt-4">
+              <div>
+                <p className="text-3xl font-bold text-teal-600">45+</p>
+                <p className="text-sm text-gray-600">Years of Service</p>
+              </div>
+              <div>
+                <p className="text-3xl font-bold text-teal-600">50K+</p>
+                <p className="text-sm text-gray-600">Happy Patients</p>
+              </div>
+              <div>
+                <p className="text-3xl font-bold text-teal-600">100+</p>
+                <p className="text-sm text-gray-600">Tests Available</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Content - Quick Links */}
+          <div className="grid grid-cols-2 gap-4">
+            {quickLinks.map((link, index) => (
+              <button
+                key={index}
+                onClick={link.title === 'Home Collection' ? onBookClick : undefined}
+                className={`${link.color} p-6 rounded-2xl border-2 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 text-left group`}
+              >
+                <link.icon className="w-10 h-10 text-gray-700 mb-4" />
+                <h3 className="font-semibold text-gray-800 text-lg">{link.title}</h3>
+                <p className="text-sm text-gray-600 mt-1">{link.subtitle}</p>
+                <ArrowRight className="w-5 h-5 text-gray-400 mt-4 group-hover:translate-x-2 transition-transform" />
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Mobile CTA */}
+        <div className="mt-8 md:hidden flex flex-col gap-3">
+          <a href={`tel:${clinicInfo.phone}`} className="w-full">
+            <Button className="w-full bg-teal-600 hover:bg-teal-700 text-white py-6 rounded-xl flex items-center justify-center gap-2">
+              <Phone className="w-5 h-5" />
+              Call Now: {clinicInfo.phone}
+            </Button>
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default HeroSection;
