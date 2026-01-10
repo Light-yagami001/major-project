@@ -12,6 +12,7 @@ const Header = ({ onBookClick }) => {
     { name: 'Services', href: '#services' },
     { name: 'Health Packages', href: '#packages' },
     { name: 'Tests', href: '#tests' },
+    { name: 'Dental', href: '#dental' },
     { name: 'Our Team', href: '#team' },
     { name: 'Contact', href: '#contact' }
   ];
