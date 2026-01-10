@@ -6,11 +6,22 @@ import { clinicInfo } from '../data/mock';
 
 const HeroSection = ({ onBookClick }) => {
   const quickLinks = [
-    { icon: Search, title: 'Find a Test', subtitle: 'View Tests & Prices', color: 'bg-teal-50 hover:bg-teal-100 border-teal-200' },
-    { icon: Home, title: 'Home Collection', subtitle: 'Book at Doorstep', color: 'bg-orange-50 hover:bg-orange-100 border-orange-200' },
-    { icon: MapPin, title: 'Visit Clinic', subtitle: 'Safdarjung Enclave', color: 'bg-blue-50 hover:bg-blue-100 border-blue-200' },
-    { icon: Package, title: 'Health Packages', subtitle: 'Full Body Checkups', color: 'bg-emerald-50 hover:bg-emerald-100 border-emerald-200' }
+    { icon: Search, title: 'Find a Test', subtitle: 'View Tests & Prices', color: 'bg-teal-50 hover:bg-teal-100 border-teal-200', action: 'scroll', target: '#tests' },
+    { icon: Home, title: 'Home Collection', subtitle: 'Book at Doorstep', color: 'bg-orange-50 hover:bg-orange-100 border-orange-200', action: 'book' },
+    { icon: MapPin, title: 'Visit Clinic', subtitle: 'Safdarjung Enclave', color: 'bg-blue-50 hover:bg-blue-100 border-blue-200', action: 'scroll', target: '#contact' },
+    { icon: Package, title: 'Health Packages', subtitle: 'Full Body Checkups', color: 'bg-emerald-50 hover:bg-emerald-100 border-emerald-200', action: 'scroll', target: '#packages' }
   ];
+
+  const handleCardClick = (link) => {
+    if (link.action === 'book') {
+      onBookClick();
+    } else if (link.action === 'scroll' && link.target) {
+      const element = document.querySelector(link.target);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
 
   return (
     <section id="home" className="relative bg-gradient-to-br from-slate-50 via-teal-50/30 to-white min-h-[85vh] flex items-center">
