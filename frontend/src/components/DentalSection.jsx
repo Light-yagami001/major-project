@@ -29,6 +29,24 @@ const DentalSection = ({ onBookClick }) => {
   // Get dental doctor info
   const dentalDoctor = teamMembers.find(m => m.role.includes('Dental'));
 
+  // Direct WhatsApp booking for dental (no home collection)
+  const handleDentalBooking = () => {
+    const message = `
+🦷 *DENTAL APPOINTMENT REQUEST*
+━━━━━━━━━━━━━━━━━━
+
+Hi, I would like to book a dental appointment with Dr. Shaveta Verma.
+
+Please call me to confirm the appointment.
+
+Thank you!
+    `.trim();
+    
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/918527969545?text=${encodedMessage}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
   return (
     <section id="dental" className="py-20 bg-gradient-to-br from-rose-50/50 via-white to-orange-50/30">
       <div className="max-w-7xl mx-auto px-4">
