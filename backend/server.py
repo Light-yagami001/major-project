@@ -25,6 +25,11 @@ app = FastAPI()
 # Create a router with the /api prefix
 api_router = APIRouter(prefix="/api")
 
+# Health check endpoint for Kubernetes - at root level (not under /api)
+@app.get("/health")
+async def health_check():
+    return {"status": "healthy"}
+
 
 # Define Models
 class StatusCheck(BaseModel):
