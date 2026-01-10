@@ -1,16 +1,59 @@
-import React from 'react';
-import { Search, Home, MapPin, Package, ArrowRight, Phone, Clock } from 'lucide-react';
+import React, { useState, useRef, useEffect } from 'react';
+import { Search, Home, MapPin, Package, ArrowRight, Phone, Clock, X, FlaskConical, Smile } from 'lucide-react';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
-import { clinicInfo } from '../data/mock';
+import { clinicInfo, popularTests, healthPackages, dentalServices } from '../data/mock';
 
 const HeroSection = ({ onBookClick }) => {
+  const [searchQuery, setSearchQuery] = useState('');
+  const [showResults, setShowResults] = useState(false);
+  const [searchResults, setSearchResults] = useState({ tests: [], packages: [], dental: [] });
+  const searchRef = useRef(null);
+
   const quickLinks = [
     { icon: Search, title: 'Find a Test', subtitle: 'View Tests & Prices', color: 'bg-teal-50 hover:bg-teal-100 border-teal-200', action: 'scroll', target: '#tests' },
     { icon: Home, title: 'Home Collection', subtitle: 'Book at Doorstep', color: 'bg-orange-50 hover:bg-orange-100 border-orange-200', action: 'book' },
     { icon: MapPin, title: 'Visit Clinic', subtitle: 'Safdarjung Enclave', color: 'bg-blue-50 hover:bg-blue-100 border-blue-200', action: 'scroll', target: '#contact' },
     { icon: Package, title: 'Health Packages', subtitle: 'Full Body Checkups', color: 'bg-emerald-50 hover:bg-emerald-100 border-emerald-200', action: 'scroll', target: '#packages' }
   ];
+
+  // Search functionality
+  useEffect(() => {
+    if (searchQuery.trim().length > 1) {
+      const query = searchQuery.toLowerCase();
+      
+      const filteredTests = popularTests.filter(test => 
+        test.name.toLowerCase().includes(query)
+      ).slice(0, 4);
+      
+      const filteredPackages = healthPackages.filter(pkg => 
+        pkg.name.toLowerCase().includes(query) || 
+        pkg.category.toLowerCase().includes(query)
+      ).slice(0, 4);
+      
+      const filteredDental = dentalServices.filter(service => 
+        service.name.toLowerCase().includes(query) ||
+        service.category.toLowerCase().includes(query)
+      ).slice(0, 4);
+      
+      setSearchResults({ tests: filteredTests, packages: filteredPackages, dental: filteredDental });
+      setShowResults(true);
+    } else {
+      setSearchResults({ tests: [], packages: [], dental: [] });
+      setShowResults(false);
+    }
+  }, [searchQuery]);
+
+  // Close search results when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (searchRef.current && !searchRef.current.contains(event.target)) {
+        setShowResults(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   const handleCardClick = (link) => {
     if (link.action === 'book') {
@@ -22,6 +65,32 @@ const HeroSection = ({ onBookClick }) => {
       }
     }
   };
+
+  const handleSearchSubmit = () => {
+    if (searchQuery.trim()) {
+      // Scroll to tests section when searching
+      const element = document.querySelector('#tests');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+      setShowResults(false);
+    }
+  };
+
+  const handleResultClick = (type) => {
+    let target = '#tests';
+    if (type === 'package') target = '#packages';
+    if (type === 'dental') target = '#dental';
+    
+    const element = document.querySelector(target);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    setShowResults(false);
+    setSearchQuery('');
+  };
+
+  const totalResults = searchResults.tests.length + searchResults.packages.length + searchResults.dental.length;
 
   return (
     <section id="home" className="relative bg-gradient-to-br from-slate-50 via-teal-50/30 to-white min-h-[85vh] flex items-center">
