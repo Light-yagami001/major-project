@@ -22,7 +22,9 @@ const Footer = () => {
     'Dental Care',
     'Vaccinations',
     'Home Collection',
-    'Health Checkups'
+    'Health Checkups',
+    'Teeth Whitening',
+    'Dental Implants'
   ];
 
   return (
