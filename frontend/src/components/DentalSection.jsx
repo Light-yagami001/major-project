@@ -174,7 +174,7 @@ Thank you!
         {/* CTA */}
         <div className="text-center mt-12">
           <Button 
-            onClick={onBookClick}
+            onClick={handleDentalBooking}
             className="bg-gradient-to-r from-rose-600 to-orange-500 hover:from-rose-700 hover:to-orange-600 text-white px-8 py-6 rounded-xl text-lg shadow-lg hover:shadow-xl transition-all"
           >
             Book Dental Appointment <ArrowRight className="w-5 h-5 ml-2" />
