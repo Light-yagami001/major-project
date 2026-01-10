@@ -239,12 +239,49 @@ export const popularTests = [
 ];
 
 export const dentalServices = [
-  { id: 1, name: "Dental Checkup", description: "Comprehensive oral examination" },
-  { id: 2, name: "Teeth Cleaning", description: "Professional scaling and polishing" },
-  { id: 3, name: "Dental Implants", description: "Permanent tooth replacement solutions" },
-  { id: 4, name: "Root Canal Treatment", description: "Save your natural teeth" },
-  { id: 5, name: "Tooth Extraction", description: "Safe and painless removal" },
-  { id: 6, name: "Dental Fillings", description: "Cavity treatment and restoration" }
+  // General Dentistry
+  { id: 1, name: "Check-ups", description: "Routine examinations of oral health", category: "General Dentistry" },
+  { id: 2, name: "Teeth Cleaning", description: "Professional cleaning to remove plaque and tartar", category: "Preventive Care" },
+  { id: 3, name: "X-ray & Digital X-ray", description: "Advanced radiographic imaging for accurate diagnosis", category: "Diagnostics" },
+  { id: 4, name: "Dental Air Polishing", description: "Advanced dental cleaning procedure", category: "Preventive Care" },
+  
+  // Restorative Dentistry
+  { id: 5, name: "Root Canals", description: "Treatment to repair and save damaged or infected teeth", category: "Restorative" },
+  { id: 6, name: "Fillings & Sealants", description: "Cavity treatment and tooth protection", category: "Restorative" },
+  { id: 7, name: "Dental Implants", description: "Permanent tooth replacement with surgical implants", category: "Restorative" },
+  { id: 8, name: "Dentures & Bridges", description: "Prosthetic devices to replace missing teeth", category: "Restorative" },
+  { id: 9, name: "Veneers & Crowns", description: "Dental restorations to cover or cap teeth", category: "Restorative" },
+  { id: 10, name: "Bonding", description: "Repair or improve the appearance of teeth", category: "Restorative" },
+  
+  // Cosmetic Dentistry
+  { id: 11, name: "Teeth Whitening", description: "Pola office teeth whitening system", category: "Cosmetic" },
+  { id: 12, name: "Teeth Reshaping", description: "Procedures to improve appearance of teeth", category: "Cosmetic" },
+  { id: 13, name: "Cosmetic Procedures", description: "Aesthetic treatments for beautiful smiles", category: "Cosmetic" },
+  
+  // Surgical & Specialized
+  { id: 14, name: "Oral Surgery", description: "Surgical procedures performed in the mouth", category: "Surgery" },
+  { id: 15, name: "Extractions", description: "Safe and painless tooth removal", category: "Surgery" },
+  { id: 16, name: "Laser Dentistry", description: "Advanced laser-based dental treatments", category: "Specialized" },
+  { id: 17, name: "TMJ Disorder Treatment", description: "Treatment for temporomandibular joint disorders", category: "Specialized" },
+  { id: 18, name: "TMJ Pain Treatment", description: "Alleviating pain associated with TMJ disorders", category: "Specialized" },
+  
+  // Pediatric & Protective
+  { id: 19, name: "Paediatric Dentistry", description: "Specialized dental care for children", category: "Pediatric" },
+  { id: 20, name: "Mouth Guards", description: "Protective devices for teeth and mouth", category: "Protective" },
+  { id: 21, name: "Emergency Care", description: "Immediate dental treatment for urgent conditions", category: "Emergency" }
+];
+
+export const dentalCategories = [
+  { id: 1, name: "General Dentistry", icon: "Stethoscope" },
+  { id: 2, name: "Preventive Care", icon: "Shield" },
+  { id: 3, name: "Diagnostics", icon: "ScanLine" },
+  { id: 4, name: "Restorative", icon: "Wrench" },
+  { id: 5, name: "Cosmetic", icon: "Sparkles" },
+  { id: 6, name: "Surgery", icon: "Scissors" },
+  { id: 7, name: "Specialized", icon: "Star" },
+  { id: 8, name: "Pediatric", icon: "Baby" },
+  { id: 9, name: "Protective", icon: "ShieldCheck" },
+  { id: 10, name: "Emergency", icon: "AlertCircle" }
 ];
 
 export const whyChooseUs = [
