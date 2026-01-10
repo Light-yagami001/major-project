@@ -94,7 +94,7 @@ Thank you!
                   </Button>
                 </a>
                 <Button 
-                  onClick={onBookClick}
+                  onClick={handleDentalBooking}
                   variant="outline" 
                   className="border-rose-600 text-rose-600 hover:bg-rose-50 rounded-xl"
                 >
