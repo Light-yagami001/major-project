@@ -12,6 +12,7 @@ const Footer = () => {
     { name: 'Services', href: '#services' },
     { name: 'Health Packages', href: '#packages' },
     { name: 'Lab Tests', href: '#tests' },
+    { name: 'Dental Care', href: '#dental' },
     { name: 'Our Team', href: '#team' },
     { name: 'Contact Us', href: '#contact' }
   ];
