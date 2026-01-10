@@ -6,6 +6,7 @@ import HeroSection from "./components/HeroSection";
 import ServicesSection from "./components/ServicesSection";
 import PackagesSection from "./components/PackagesSection";
 import TestsSection from "./components/TestsSection";
+import DentalSection from "./components/DentalSection";
 import TeamSection from "./components/TeamSection";
 import TestimonialsSection from "./components/TestimonialsSection";
 import WhyChooseUsSection from "./components/WhyChooseUsSection";
@@ -29,6 +30,7 @@ function App() {
         <ServicesSection />
         <PackagesSection onBookClick={handleBookClick} />
         <TestsSection onBookClick={handleBookClick} />
+        <DentalSection onBookClick={handleBookClick} />
         <WhyChooseUsSection />
         <TeamSection />
         <TestimonialsSection />
