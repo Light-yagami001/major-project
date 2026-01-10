@@ -121,17 +121,111 @@ const HeroSection = ({ onBookClick }) => {
             </div>
 
             {/* Search Bar */}
-            <div className="bg-white rounded-2xl shadow-xl p-2 flex items-center gap-2 max-w-xl border border-gray-100">
-              <div className="flex-1 flex items-center gap-3 px-4">
-                <Search className="w-5 h-5 text-gray-400" />
-                <Input 
-                  placeholder="Search for tests, packages..." 
-                  className="border-0 focus-visible:ring-0 text-gray-700 placeholder:text-gray-400"
-                />
+            <div ref={searchRef} className="relative">
+              <div className="bg-white rounded-2xl shadow-xl p-2 flex items-center gap-2 max-w-xl border border-gray-100">
+                <div className="flex-1 flex items-center gap-3 px-4">
+                  <Search className="w-5 h-5 text-gray-400" />
+                  <Input 
+                    placeholder="Search for tests, packages..." 
+                    className="border-0 focus-visible:ring-0 text-gray-700 placeholder:text-gray-400"
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    onKeyDown={(e) => e.key === 'Enter' && handleSearchSubmit()}
+                  />
+                  {searchQuery && (
+                    <button onClick={() => { setSearchQuery(''); setShowResults(false); }} className="p-1 hover:bg-gray-100 rounded-full">
+                      <X className="w-4 h-4 text-gray-400" />
+                    </button>
+                  )}
+                </div>
+                <Button 
+                  onClick={handleSearchSubmit}
+                  className="bg-teal-600 hover:bg-teal-700 text-white px-6 py-6 rounded-xl"
+                >
+                  Search
+                </Button>
               </div>
-              <Button className="bg-teal-600 hover:bg-teal-700 text-white px-6 py-6 rounded-xl">
-                Search
-              </Button>
+
+              {/* Search Results Dropdown */}
+              {showResults && totalResults > 0 && (
+                <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-2xl shadow-2xl border border-gray-100 max-h-96 overflow-y-auto z-50">
+                  {/* Tests Results */}
+                  {searchResults.tests.length > 0 && (
+                    <div className="p-3 border-b">
+                      <p className="text-xs font-semibold text-gray-500 uppercase mb-2 px-2">Lab Tests</p>
+                      {searchResults.tests.map((test) => (
+                        <button
+                          key={test.id}
+                          onClick={() => handleResultClick('test')}
+                          className="w-full flex items-center gap-3 p-2 hover:bg-teal-50 rounded-lg text-left transition-colors"
+                        >
+                          <div className="w-8 h-8 bg-teal-100 rounded-lg flex items-center justify-center">
+                            <FlaskConical className="w-4 h-4 text-teal-600" />
+                          </div>
+                          <div className="flex-1">
+                            <p className="font-medium text-gray-800 text-sm">{test.name}</p>
+                            <p className="text-xs text-gray-500">{test.parameters} Parameters • {test.reportTime}</p>
+                          </div>
+                          <span className="text-teal-600 font-semibold">₹{test.price}</span>
+                        </button>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* Packages Results */}
+                  {searchResults.packages.length > 0 && (
+                    <div className="p-3 border-b">
+                      <p className="text-xs font-semibold text-gray-500 uppercase mb-2 px-2">Health Packages</p>
+                      {searchResults.packages.map((pkg) => (
+                        <button
+                          key={pkg.id}
+                          onClick={() => handleResultClick('package')}
+                          className="w-full flex items-center gap-3 p-2 hover:bg-emerald-50 rounded-lg text-left transition-colors"
+                        >
+                          <div className="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center">
+                            <Package className="w-4 h-4 text-emerald-600" />
+                          </div>
+                          <div className="flex-1">
+                            <p className="font-medium text-gray-800 text-sm">{pkg.name}</p>
+                            <p className="text-xs text-gray-500">{pkg.parameters} Parameters • {pkg.category}</p>
+                          </div>
+                          <span className="text-emerald-600 font-semibold">₹{pkg.discountedPrice}</span>
+                        </button>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* Dental Results */}
+                  {searchResults.dental.length > 0 && (
+                    <div className="p-3">
+                      <p className="text-xs font-semibold text-gray-500 uppercase mb-2 px-2">Dental Services</p>
+                      {searchResults.dental.map((service) => (
+                        <button
+                          key={service.id}
+                          onClick={() => handleResultClick('dental')}
+                          className="w-full flex items-center gap-3 p-2 hover:bg-rose-50 rounded-lg text-left transition-colors"
+                        >
+                          <div className="w-8 h-8 bg-rose-100 rounded-lg flex items-center justify-center">
+                            <Smile className="w-4 h-4 text-rose-600" />
+                          </div>
+                          <div className="flex-1">
+                            <p className="font-medium text-gray-800 text-sm">{service.name}</p>
+                            <p className="text-xs text-gray-500">{service.category}</p>
+                          </div>
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              )}
+
+              {/* No Results */}
+              {showResults && totalResults === 0 && searchQuery.trim().length > 1 && (
+                <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-2xl shadow-2xl border border-gray-100 p-6 text-center z-50">
+                  <p className="text-gray-500">No results found for "{searchQuery}"</p>
+                  <p className="text-sm text-gray-400 mt-1">Try searching for CBC, Thyroid, Dental, etc.</p>
+                </div>
+              )}
             </div>
 
             {/* Stats */}
