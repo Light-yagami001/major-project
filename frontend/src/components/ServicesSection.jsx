@@ -13,7 +13,29 @@ const iconMap = {
   Brain
 };
 
-const ServicesSection = () => {
+// Map services to their relevant sections
+const serviceTargets = {
+  'Lab Tests': '#tests',
+  'ECG': '#tests',
+  'Dental Care': '#dental',
+  'Vaccinations': '#contact',
+  'Home Collection': '#contact',
+  'Pharmacy': '#contact',
+  'Family Physician': '#team',
+  'Counseling': '#team'
+};
+
+const ServicesSection = ({ onBookClick }) => {
+  const handleServiceClick = (serviceTitle) => {
+    const target = serviceTargets[serviceTitle];
+    if (target) {
+      const element = document.querySelector(target);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
   return (
     <section id="services" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4">
@@ -33,9 +55,10 @@ const ServicesSection = () => {
           {services.map((service) => {
             const IconComponent = iconMap[service.icon];
             return (
-              <div
+              <button
                 key={service.id}
-                className="group bg-gradient-to-br from-slate-50 to-white p-6 rounded-2xl border border-gray-100 hover:border-teal-200 hover:shadow-xl transition-all duration-300 cursor-pointer"
+                onClick={() => handleServiceClick(service.title)}
+                className="group bg-gradient-to-br from-slate-50 to-white p-6 rounded-2xl border border-gray-100 hover:border-teal-200 hover:shadow-xl transition-all duration-300 cursor-pointer text-left"
               >
                 <div className="w-14 h-14 bg-teal-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-teal-600 group-hover:scale-110 transition-all duration-300">
                   <IconComponent className="w-7 h-7 text-teal-600 group-hover:text-white transition-colors" />
@@ -45,7 +68,7 @@ const ServicesSection = () => {
                 <div className="mt-4 flex items-center text-teal-600 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
                   Learn more <ArrowRight className="w-4 h-4 ml-1" />
                 </div>
-              </div>
+              </button>
             );
           })}
         </div>
