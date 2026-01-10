@@ -247,8 +247,9 @@ ${formData.notes || 'Not specified'}
               />
             </div>
 
-            <div className="bg-orange-50 p-4 rounded-xl text-sm text-orange-800">
-              <p>Our team will call you to confirm the booking and provide exact pricing.</p>
+            <div className="bg-green-50 p-4 rounded-xl text-sm text-green-800 flex items-start gap-3">
+              <MessageCircle className="w-5 h-5 flex-shrink-0 mt-0.5" />
+              <p>Clicking submit will open WhatsApp to send your booking request. Our team will call you to confirm.</p>
             </div>
 
             <div className="flex gap-3">
@@ -257,9 +258,10 @@ ${formData.notes || 'Not specified'}
               </Button>
               <Button 
                 onClick={handleSubmit} 
-                className="flex-1 bg-teal-600 hover:bg-teal-700 rounded-xl py-6"
+                className="flex-1 bg-green-600 hover:bg-green-700 rounded-xl py-6 flex items-center justify-center gap-2"
               >
-                Submit Booking
+                <MessageCircle className="w-5 h-5" />
+                Book via WhatsApp
               </Button>
             </div>
           </div>
