@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Calendar, User, Phone, Clock, Home, MapPin, Check } from 'lucide-react';
+import { X, Calendar, User, Phone, Clock, Home, MapPin, Check, MessageCircle } from 'lucide-react';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
@@ -28,8 +28,45 @@ const BookingModal = ({ isOpen, onClose }) => {
     '2:00 PM', '3:00 PM', '4:00 PM', '5:00 PM', '6:00 PM', '7:00 PM', '8:00 PM'
   ];
 
+  // WhatsApp number for receiving bookings (clinic's WhatsApp)
+  const clinicWhatsApp = clinicInfo.whatsapp; // 9873898040
+
   const handleSubmit = () => {
-    toast.success('Booking request submitted! We will call you shortly to confirm.');
+    // Format the booking details for WhatsApp
+    const bookingDetails = `
+🏥 *NEW BOOKING REQUEST*
+━━━━━━━━━━━━━━━━━━
+
+📋 *Booking Type:* ${bookingType === 'home' ? 'Home Collection 🏠' : 'Clinic Visit 🏥'}
+
+👤 *Patient Details:*
+• Name: ${formData.name}
+• Phone: ${formData.phone}
+• Email: ${formData.email || 'Not provided'}
+
+📅 *Appointment:*
+• Date: ${formData.date}
+• Time: ${formData.time}
+
+${bookingType === 'home' ? `📍 *Address:*\n${formData.address}\n` : ''}
+🔬 *Tests/Packages Required:*
+${formData.notes || 'Not specified'}
+
+━━━━━━━━━━━━━━━━━━
+📞 Please call the patient to confirm.
+    `.trim();
+
+    // Encode the message for WhatsApp URL
+    const encodedMessage = encodeURIComponent(bookingDetails);
+    const whatsappUrl = `https://wa.me/91${clinicWhatsApp}?text=${encodedMessage}`;
+
+    // Open WhatsApp with pre-filled message
+    window.open(whatsappUrl, '_blank');
+
+    // Show success message
+    toast.success('Redirecting to WhatsApp to complete your booking!');
+    
+    // Close modal and reset form
     onClose();
     setStep(1);
     setFormData({
