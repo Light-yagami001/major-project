@@ -19,7 +19,7 @@ export const teamMembers = [
     name: "Dr. B B Gupta",
     role: "Senior Family Physician",
     phone: "9810501778",
-    image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=400&fit=crop",
+    image: "https://customer-assets.emergentagent.com/job_clinic-and-lab/artifacts/02g7uvzi_WhatsApp%20Image%202026-01-10%20at%2014.38.54.jpeg",
     experience: "40+ Years"
   },
   {
@@ -27,7 +27,7 @@ export const teamMembers = [
     name: "Dr. Shaveta Verma",
     role: "Dental Surgeon & Implantologist",
     phone: "8527969545",
-    image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=400&fit=crop",
+    image: "https://customer-assets.emergentagent.com/job_clinic-and-lab/artifacts/woeafrlt_WhatsApp%20Image%202026-01-12%20at%2010.27.53.jpeg",
     experience: "15+ Years"
   },
   {
@@ -35,7 +35,7 @@ export const teamMembers = [
     name: "Anjana Gupta",
     role: "Counselor & Spiritual Therapist",
     phone: "9871333818",
-    image: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&h=400&fit=crop",
+    image: "https://customer-assets.emergentagent.com/job_clinic-and-lab/artifacts/okg5d4lb_WhatsApp%20Image%202026-01-10%20at%2014.38.53%20%281%29.jpeg",
     experience: "20+ Years"
   },
   {
