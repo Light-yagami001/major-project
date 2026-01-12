@@ -35,7 +35,7 @@ export const teamMembers = [
     name: "Anjana Gupta",
     role: "Counselor & Spiritual Therapist",
     phone: "9871333818",
-    image: "https://customer-assets.emergentagent.com/job_clinic-and-lab/artifacts/okg5d4lb_WhatsApp%20Image%202026-01-10%20at%2014.38.53%20%281%29.jpeg",
+    image: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&h=400&fit=crop",
     experience: "20+ Years"
   },
   {
