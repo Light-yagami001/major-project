@@ -63,7 +63,7 @@ const Header = ({ onBookClick }) => {
                 <div className="flex items-center gap-2">
                   <p className="text-xs text-teal-600 font-medium">Estd. {clinicInfo.established}</p>
                   <span className="text-gray-300">|</span>
-                  <p className="text-xs text-gray-500 italic">Formerly Sharda Clinic</p>
+                  <p className="text-xs text-blue-600 font-bold">Formerly Sharda Clinic</p>
                 </div>
               </div>
             </div>
