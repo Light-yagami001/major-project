@@ -10,6 +10,7 @@ import DentalSection from "./components/DentalSection";
 import TeamSection from "./components/TeamSection";
 import TestimonialsSection from "./components/TestimonialsSection";
 import WhyChooseUsSection from "./components/WhyChooseUsSection";
+import FacilitiesSection from "./components/FacilitiesSection";
 import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
 import BookingModal from "./components/BookingModal";
