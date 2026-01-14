@@ -19,7 +19,7 @@ export const teamMembers = [
     name: "Dr. B B Gupta",
     role: "Senior Family Physician",
     phone: "9810501778",
-    image: "https://customer-assets.emergentagent.com/job_clinic-and-lab/artifacts/02g7uvzi_WhatsApp%20Image%202026-01-10%20at%2014.38.54.jpeg",
+    image: "/images/team/dr-bb-gupta.jpeg",
     experience: "40+ Years"
   },
   {
@@ -27,7 +27,7 @@ export const teamMembers = [
     name: "Dr. Shaveta Verma",
     role: "Dental Surgeon & Implantologist",
     phone: "8527969545",
-    image: "https://customer-assets.emergentagent.com/job_clinic-and-lab/artifacts/woeafrlt_WhatsApp%20Image%202026-01-12%20at%2010.27.53.jpeg",
+    image: "/images/team/dr-shaveta-verma.jpeg",
     experience: "15+ Years"
   },
   {
