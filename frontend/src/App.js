@@ -33,6 +33,7 @@ function App() {
         <TestsSection onBookClick={handleBookClick} />
         <DentalSection onBookClick={handleBookClick} />
         <WhyChooseUsSection />
+        <FacilitiesSection />
         <TeamSection />
         <TestimonialsSection />
         <ContactSection />
