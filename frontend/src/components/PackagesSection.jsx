@@ -51,7 +51,7 @@ const PackagesSection = ({ onBookClick }) => {
 
         {/* Packages Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredPackages.slice(0, 6).map((pkg) => (
+          {(showAll ? filteredPackages : filteredPackages.slice(0, 6)).map((pkg) => (
             <div
               key={pkg.id}
               className={`bg-white rounded-2xl border-2 overflow-hidden transition-all duration-300 hover:shadow-xl ${
