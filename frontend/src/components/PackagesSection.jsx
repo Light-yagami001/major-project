@@ -6,6 +6,7 @@ import { healthPackages } from '../data/mock';
 
 const PackagesSection = ({ onBookClick }) => {
   const [expandedId, setExpandedId] = useState(null);
+  const [showAll, setShowAll] = useState(false);
   const categories = [...new Set(healthPackages.map(pkg => pkg.category))];
   const [activeCategory, setActiveCategory] = useState('all');
 
