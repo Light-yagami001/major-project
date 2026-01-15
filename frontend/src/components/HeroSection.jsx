@@ -246,12 +246,13 @@ const HeroSection = ({ onBookClick }) => {
           </div>
 
           {/* Right Content - Quick Links */}
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-2 gap-4 relative z-10">
             {quickLinks.map((link, index) => (
               <button
                 key={index}
+                data-testid={`quick-link-${link.title.toLowerCase().replace(/\s+/g, '-')}`}
                 onClick={() => handleCardClick(link)}
-                className={`${link.color} p-6 rounded-2xl border-2 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 text-left group cursor-pointer`}
+                className={`${link.color} p-6 rounded-2xl border-2 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 text-left group cursor-pointer relative z-10`}
               >
                 <link.icon className="w-10 h-10 text-gray-700 mb-4" />
                 <h3 className="font-semibold text-gray-800 text-lg">{link.title}</h3>
