@@ -109,7 +109,7 @@ const Header = ({ onBookClick }) => {
                     </div>
                     <div>
                       <h2 className="font-bold text-gray-800">{clinicInfo.name}</h2>
-                      <p className="text-xs text-teal-600">Est. {clinicInfo.established}</p>
+                      <p className="text-xs text-blue-800 font-bold">({clinicInfo.previousName})</p>
                     </div>
                   </div>
                   
