@@ -33,7 +33,7 @@ const Header = ({ onBookClick }) => {
           <div className="flex items-center gap-6">
             <span className="flex items-center gap-2">
               <Clock className="w-4 h-4" />
-              {clinicInfo.workingHours} | {clinicInfo.workingDays}
+              {clinicInfo.workingHours}
             </span>
             <span className="flex items-center gap-2">
               <MapPin className="w-4 h-4" />
@@ -44,6 +44,11 @@ const Header = ({ onBookClick }) => {
             <a href={`tel:${clinicInfo.phone}`} className="flex items-center gap-2 hover:text-teal-200 transition-colors">
               <Phone className="w-4 h-4" />
               {clinicInfo.phone}
+            </a>
+            <span className="text-teal-300">|</span>
+            <a href={`tel:${clinicInfo.phone2}`} className="flex items-center gap-2 hover:text-teal-200 transition-colors">
+              <Phone className="w-4 h-4" />
+              {clinicInfo.phone2}
             </a>
           </div>
         </div>
