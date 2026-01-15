@@ -131,9 +131,13 @@ const Header = ({ onBookClick }) => {
                         <Clock className="w-4 h-4 text-teal-600" />
                         {clinicInfo.workingHours}
                       </p>
-                      <p className="flex items-center gap-2">
+                      <p className="flex items-center gap-2 mb-1">
                         <Phone className="w-4 h-4 text-teal-600" />
                         {clinicInfo.phone}
+                      </p>
+                      <p className="flex items-center gap-2">
+                        <Phone className="w-4 h-4 text-teal-600" />
+                        {clinicInfo.phone2}
                       </p>
                     </div>
                     <Button 
