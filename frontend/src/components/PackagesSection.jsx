@@ -129,8 +129,12 @@ const PackagesSection = ({ onBookClick }) => {
         {/* View All Button */}
         {filteredPackages.length > 6 && (
           <div className="text-center mt-10">
-            <Button variant="outline" className="border-teal-600 text-teal-600 hover:bg-teal-50 rounded-full px-8">
-              View All {filteredPackages.length} Packages
+            <Button 
+              variant="outline" 
+              onClick={() => setShowAll(!showAll)}
+              className="border-teal-600 text-teal-600 hover:bg-teal-50 rounded-full px-8"
+            >
+              {showAll ? 'Show Less' : `View All ${filteredPackages.length} Packages`}
             </Button>
           </div>
         )}
