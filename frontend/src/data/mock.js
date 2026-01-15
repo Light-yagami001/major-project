@@ -3,12 +3,13 @@
 export const clinicInfo = {
   name: "Kamakhya Clinic & Lab",
   tagline: "Your Trusted Family Healthcare Partner Since 1980",
-  previousName: "Formerly Sharda Clinic & Laboratory",
+  previousName: "Sharda Clinic and Laboratory Estd. 1980",
   established: 1980,
   address: "B-5/157, Safdarjung Enclave (Basement), New Delhi",
-  workingHours: "9:00 AM - 9:00 PM",
+  workingHours: "Mon-Sat: 9 AM - 9 PM | Sun: 9 AM - 1 PM",
   workingDays: "Monday - Sunday",
   phone: "9810501778",
+  phone2: "9873898040",
   whatsapp: "9873898040",
   email: "kamakhyaclinic@gmail.com"
 };
