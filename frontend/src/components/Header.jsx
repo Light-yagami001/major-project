@@ -65,11 +65,7 @@ const Header = ({ onBookClick }) => {
               </div>
               <div>
                 <h1 className="text-xl font-bold text-gray-800 leading-tight">{clinicInfo.name}</h1>
-                <div className="flex items-center gap-2">
-                  <p className="text-xs text-teal-600 font-medium">Estd. {clinicInfo.established}</p>
-                  <span className="text-gray-300">|</span>
-                  <p className="text-xs text-blue-600 font-bold">Formerly Sharda Clinic</p>
-                </div>
+                <p className="text-xs text-blue-800 font-bold">({clinicInfo.previousName})</p>
               </div>
             </div>
 
