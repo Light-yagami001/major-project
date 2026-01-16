@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlaskConical, HeartPulse, Smile, Syringe, Home, Pill, Stethoscope, Brain, ArrowRight } from 'lucide-react';
+import { FlaskConical, HeartPulse, Smile, Syringe, Home, Pill, Stethoscope, Brain, ArrowRight, Activity } from 'lucide-react';
 import { services } from '../data/mock';
 
 const iconMap = {
@@ -10,7 +10,8 @@ const iconMap = {
   Home,
   Pill,
   Stethoscope,
-  Brain
+  Brain,
+  Activity
 };
 
 // Map services to their relevant sections
