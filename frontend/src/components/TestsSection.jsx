@@ -76,11 +76,17 @@ const TestsSection = ({ onBookClick }) => {
         </div>
 
         {/* View All CTA */}
-        <div className="text-center mt-12">
-          <Button variant="outline" className="border-teal-600 text-teal-600 hover:bg-teal-50 rounded-full px-8 py-6">
-            View All Tests <ArrowRight className="w-4 h-4 ml-2" />
-          </Button>
-        </div>
+        {popularTests.length > 8 && (
+          <div className="text-center mt-12">
+            <Button 
+              variant="outline" 
+              onClick={() => setShowAll(!showAll)}
+              className="border-teal-600 text-teal-600 hover:bg-teal-50 rounded-full px-8 py-6"
+            >
+              {showAll ? 'Show Less' : `View All ${popularTests.length} Tests`} <ArrowRight className="w-4 h-4 ml-2" />
+            </Button>
+          </div>
+        )}
       </div>
     </section>
   );
