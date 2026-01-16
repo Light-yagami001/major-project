@@ -76,6 +76,12 @@ export const services = [
     icon: "Smile"
   },
   {
+    id: 9,
+    title: "Physiotherapy",
+    description: "Physical rehabilitation and pain management therapy",
+    icon: "Activity"
+  },
+  {
     id: 4,
     title: "Vaccinations",
     description: "Immunization for children and adults",
