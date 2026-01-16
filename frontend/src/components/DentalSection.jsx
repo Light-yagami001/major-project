@@ -60,7 +60,7 @@ Thank you!
             Dental Solutions by Dr. Shaveta Verma
           </h2>
           <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
-            Expert dental care with 15+ years of experience. From routine checkups to advanced implants - we've got your smile covered.
+            Expert dental care with 20+ years of experience. From routine checkups to advanced implants - we've got your smile covered.
           </p>
         </div>
 

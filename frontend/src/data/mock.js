@@ -52,6 +52,12 @@ export const teamMembers = [
 
 export const services = [
   {
+    id: 7,
+    title: "Family Physician",
+    description: "Expert consultation for all family health concerns",
+    icon: "Stethoscope"
+  },
+  {
     id: 1,
     title: "Lab Tests",
     description: "Comprehensive blood, urine and other diagnostic tests with accurate results",
@@ -86,12 +92,6 @@ export const services = [
     title: "Pharmacy",
     description: "Quality medicines and healthcare products",
     icon: "Pill"
-  },
-  {
-    id: 7,
-    title: "Family Physician",
-    description: "Expert consultation for all family health concerns",
-    icon: "Stethoscope"
   },
   {
     id: 8,
