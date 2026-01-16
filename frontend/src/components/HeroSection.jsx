@@ -231,8 +231,8 @@ const HeroSection = ({ onBookClick }) => {
             {/* Stats */}
             <div className="flex flex-wrap gap-8 pt-4">
               <div>
-                <p className="text-3xl font-bold text-teal-600">45+</p>
-                <p className="text-sm text-gray-600">Years of Service</p>
+                <p className="text-3xl font-extrabold text-teal-600">45+</p>
+                <p className="text-sm font-bold text-gray-700">Years of Experience</p>
               </div>
               <div>
                 <p className="text-3xl font-bold text-teal-600">50K+</p>
@@ -241,6 +241,14 @@ const HeroSection = ({ onBookClick }) => {
               <div>
                 <p className="text-3xl font-bold text-teal-600">100+</p>
                 <p className="text-sm text-gray-600">Tests Available</p>
+              </div>
+            </div>
+
+            {/* Sample Collection Highlight */}
+            <div className="mt-6">
+              <div className="inline-flex items-center gap-3 bg-gradient-to-r from-orange-500 to-orange-600 text-white px-6 py-3 rounded-full shadow-lg animate-pulse">
+                <Clock className="w-5 h-5" />
+                <span className="font-bold text-lg">Sample Collection in 30-40 mins!</span>
               </div>
             </div>
           </div>
