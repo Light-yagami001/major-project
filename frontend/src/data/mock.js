@@ -10,6 +10,7 @@ export const clinicInfo = {
   workingDays: "Monday - Sunday",
   phone: "9810501778",
   phone2: "9873898040",
+  phone3: "8527969545",
   whatsapp: "9873898040",
   email: "kamakhyaclinic@gmail.com"
 };
@@ -29,7 +30,7 @@ export const teamMembers = [
     role: "Dental Surgeon & Implantologist",
     phone: "8527969545",
     image: "/images/team/dr-shaveta-verma.jpeg",
-    experience: "15+ Years"
+    experience: "20+ Years"
   },
   {
     id: 3,
