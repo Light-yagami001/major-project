@@ -41,7 +41,7 @@ const TestsSection = ({ onBookClick }) => {
 
         {/* Tests Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-          {popularTests.map((test) => (
+          {displayedTests.map((test) => (
             <div
               key={test.id}
               className="bg-gradient-to-br from-slate-50 to-white p-5 rounded-xl border border-gray-100 hover:border-teal-200 hover:shadow-lg transition-all duration-300 group"
