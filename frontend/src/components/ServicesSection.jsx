@@ -23,7 +23,8 @@ const serviceTargets = {
   'Home Collection': '#contact',
   'Pharmacy': '#contact',
   'Family Physician': '#team',
-  'Counseling': '#team'
+  'Counseling': '#team',
+  'Physiotherapy': '#contact'
 };
 
 const ServicesSection = ({ onBookClick }) => {
