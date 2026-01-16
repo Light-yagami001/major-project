@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Clock, ArrowRight, Search } from 'lucide-react';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
@@ -6,6 +6,9 @@ import { Badge } from './ui/badge';
 import { popularTests } from '../data/mock';
 
 const TestsSection = ({ onBookClick }) => {
+  const [showAll, setShowAll] = useState(false);
+  const displayedTests = showAll ? popularTests : popularTests.slice(0, 8);
+
   return (
     <section id="tests" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4">
